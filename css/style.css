@@ -8,15 +8,18 @@ body {
 }
 
 .wrapper {
+  max-width: 1440px;
   height: 800px;
   display: flex;
-  max-width: 1440px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
-  padding: 40px;
 }
 
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+}
 .restart {
   width: 175px;
   height: 50px;
@@ -42,11 +45,24 @@ body {
   height: 500px;
   display: flex;
   flex-direction: column;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: bold;
 }
 .header {
   display: flex;
   color: #9a9a9a;
   font-size: 24px;
+  align-items: center;
+}
+
+.header .player-x {
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.header .player-o {
+  flex: 1;
+  border-bottom: 1px solid #eee;
 }
 
 .board {
@@ -64,8 +80,17 @@ body {
   justify-content: center;
   font-size: 80px;
   background: white;
+  cursor: pointer;
 }
 
 .board-tile:not(:nth-child(3n)) {
-  border-right: 3px solid rgb(168, 162, 162, 0);
+  border-right: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.58);
+}
+
+.board-tile:hover {
+  background: #eee;
 }
