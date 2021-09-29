@@ -12,7 +12,7 @@ body {
   height: 800px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -55,16 +55,26 @@ h1 {
   align-items: center;
 }
 
-.header .player-x {
+.header .player-X {
   flex: 1;
-  border-bottom: 1px solid #eee;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
 }
 
-.header .player-o {
-  flex: 1;
-  border-bottom: 1px solid #eee;
+.player-X.active {
+  color: #42bed7;
+  border-color: #42bed7;
 }
 
+.header .player-O {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+.player-O.active {
+  color: #a1d1e4;
+  border-color: #a1d1e4;
+}
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -93,4 +103,16 @@ h1 {
 
 .board-tile:hover {
   background: #eee;
+}
+
+.tile-x {
+  color: #42bed7;
+}
+
+.tile-o {
+  color: #a1d1e4;
+}
+
+.tile-winner span {
+  color: rgb(53, 211, 190);
 }

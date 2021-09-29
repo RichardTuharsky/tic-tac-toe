@@ -17,12 +17,18 @@ export default class Game {
 
 
     makeMove(i) {
+        // When someone find a winning combination
+        if(this.endOfGame()){
+            return;
+        }
+
         if(this.board[i]){   // This solved that you cannot click again on specific tile and change for O to X
             return;         //
         }
         this.board[i]= this.turn; 
         let winningCombination = this.findWinningCombinations();
         console.log("this is the winner:", winningCombination)
+        
     }
 
 
@@ -30,6 +36,7 @@ export default class Game {
     // The combinations [0,1,2] [3,4,5] [6,7,8] [0,3,6] [1,4,7] [2,5,8], two more
 
     findWinningCombinations(){
+        
         const winningCombinations = [
             [0,1,2], // winning combination
             [3,4,5], // winning combination
@@ -50,6 +57,17 @@ export default class Game {
                  return combination;
            }    
         }
+        return null;
+    }   
 
+    // When someone find a winning combination, nobody can continue to play.
+            endOfGame(){
+                let winningCombination = this.findWinningCombinations();
+                if(winningCombination){
+                return true;
+            } else {
+                return false;
+            }
     }
+
 }
